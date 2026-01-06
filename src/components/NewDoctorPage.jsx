@@ -16,7 +16,7 @@ export default function NewDoctorPage(props) {
     async function handleSubmit(e) {
         e.preventDefault();
         let res = await axios.post(`${baseUrl}/doctors`, newDoctor)
-        alert(`Welcome to the Chaitanya Hospital Dr.${newDoctor.name}.We're counting on you`)
+        alert(`Welcome to the Chaitanya Hospital Dr.${newDoctor.name}.We're counting on your service!`)
         setNewDoctor(prev => ({
             "name": "",
             "salary": "",
@@ -31,13 +31,14 @@ export default function NewDoctorPage(props) {
     }
 
     return (
-        <form className="form" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
 
             {/* Name */}
 
-            <div className="form-field">
+            <div>
                 <label htmlFor="name">Name: </label>
-                <input type="text" id="name" name="name" placeholder="Enter a name" value={newDoctor.name}
+                <input type="text" id="name" name="name" required={true} placeholder="Enter a name"
+                       value={newDoctor.name}
                        onChange={(e) => setNewDoctor((prev) => ({
                            ...prev, name: e.target.value
                        }))}/>
@@ -46,9 +47,10 @@ export default function NewDoctorPage(props) {
             {/* Salary */}
 
 
-            <div className="form-field">
+            <div>
                 <label htmlFor="age">Age: </label>
-                <input type="number" id="age" name="age" placeholder="Enter the age" value={newDoctor.age}
+                <input type="number" id="age" name="age" required={true} placeholder="Enter the age"
+                       value={newDoctor.age}
                        onChange={(e) => setNewDoctor((prev) => ({
                            ...prev, age: e.target.value
                        }))}/>
@@ -56,7 +58,7 @@ export default function NewDoctorPage(props) {
 
             {/* Gender */}
 
-            <div className="form-field">
+            <div>
                 <span>Gender: </span>
                 <label htmlFor="male">Male: </label>
                 <input type="radio" id="male" name="gender" value="male" onChange={(e) => setNewDoctor((prev) => ({
@@ -75,9 +77,10 @@ export default function NewDoctorPage(props) {
             {/* Salary */}
 
 
-            <div className="form-field">
+            <div>
                 <label htmlFor="salary">Salary: </label>
-                <input type="number" id="" name="" placeholder="Enter the salary" value={newDoctor.salary}
+                <input type="number" required={true} id="" name="" placeholder="Enter the salary"
+                       value={newDoctor.salary}
                        onChange={(e) => setNewDoctor((prev) => ({
                            ...prev, salary: e.target.value
                        }))}/>
@@ -85,7 +88,7 @@ export default function NewDoctorPage(props) {
 
             {/* Specialization */}
 
-            <div className="form-field">
+            <div>
                 <label htmlFor="specialization">Specialization: </label>
                 <input type="text" id="specialization" name="specialization" placeholder="Enter a specialization"
                        value={newDoctor.specialization} onChange={(e) => setNewDoctor((prev) => ({

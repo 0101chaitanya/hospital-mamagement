@@ -1,13 +1,10 @@
-
-
-
 export default function PatientCard(props) {
-    const { patient } = props;
-    const { name, weight, gender, age, email, disease, doctor, id } = patient;
+    const {patient} = props;
+    const {name, weight, gender, age, email, disease, doctor, id} = patient;
 
-    const { name: docName, specialization } = doctor;
+    const {name: docName, specialization} = doctor;
     return (
-        <div className="card">
+        <div>
             <h2>Name: {name}</h2>
             <p>Email: {email}</p>
             <p>Id: {id}</p>

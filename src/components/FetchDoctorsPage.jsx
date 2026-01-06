@@ -34,7 +34,7 @@ export default function FetchDoctorsPage(props) {
     if (error) return <p>Error: {error}</p>;
 
     return (
-        <div className="container">
+        <div>
             <h1>List of doctors working in the Chaitanya Hospital</h1>
             {<main>
                 {doctors.map(doctor => (

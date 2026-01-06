@@ -1,7 +1,5 @@
-
-
 import axios from "axios";
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
 import PatientCard from "./PatientCard";
 // import DoctorCard from "./DoctorCard";
 
@@ -31,17 +29,13 @@ export default function FetchPatientsPage(props) {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;
 
-    return (<div className="container">
-        <h1>List of admitted patients</h1>
-        {<main>
-            {patients.map(patient => (
-                <PatientCard key={patient.id} patient={patient} />
-            ))}
-        </main>}
-    </div>
+    return (<div>
+            <h1>List of admitted patients</h1>
+            {<main>
+                {patients.map(patient => (
+                    <PatientCard key={patient.id} patient={patient}/>
+                ))}
+            </main>}
+        </div>
     );
 }
-
-
-
-

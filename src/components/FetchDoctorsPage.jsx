@@ -32,9 +32,10 @@ export default function FetchDoctorsPage(props) {
     }
 
     async function deleteDoctor(id) {
-
+        let doctor = doctors.find(doctor => doctor.id === id);
         console.log(id)
         let res = await axios.delete(`${baseUrl}/doctors/${id}`);
+        alert(`Goodbye 😪 Dr.${doctor.name}.It was a pleasure working alongside you. Greetings from Chaitanya Hospital Administration and staff`)
         fetchDoctors()
         console.log(res)
     }
@@ -45,7 +46,7 @@ export default function FetchDoctorsPage(props) {
     return (
         <div className="container-fluid">
             <h1 className="m-1 p-1 text-center">List of doctors working in the Chaitanya Hospital</h1>
-            {<main className="row row-cols-1 row-cols-2 g-4">
+            {<main className="row row-cols-1 row-cols-2 g-4 p-4">
                 {doctors.map(doctor => (
                     <DoctorCard handleDeleteDoctor={deleteDoctor} key={doctor.id} doctor={doctor}/>
                 ))}

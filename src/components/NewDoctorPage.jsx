@@ -31,13 +31,14 @@ export default function NewDoctorPage(props) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="container-fluid flex flex-row" onSubmit={handleSubmit}>
 
             {/* Name */}
 
-            <div>
-                <label htmlFor="name">Name: </label>
-                <input type="text" id="name" name="name" required={true} placeholder="Enter a name"
+            <div className="m-3 flex flex-row">
+                {/*<label className="form-label" htmlFor="name">Name: </label>*/}
+                <input className="form-control" type="text" id="name" name="name" required={true}
+                       placeholder="Enter a name"
                        value={newDoctor.name}
                        onChange={(e) => setNewDoctor((prev) => ({
                            ...prev, name: e.target.value
@@ -47,9 +48,10 @@ export default function NewDoctorPage(props) {
             {/* Salary */}
 
 
-            <div>
-                <label htmlFor="age">Age: </label>
-                <input type="number" id="age" name="age" required={true} placeholder="Enter the age"
+            <div className="m-3">
+                {/*<label className="form-label" htmlFor="age">Age: </label>*/}
+                <input className="form-control" type="number" id="age" name="age" required={true}
+                       placeholder="Enter the age"
                        value={newDoctor.age}
                        onChange={(e) => setNewDoctor((prev) => ({
                            ...prev, age: e.target.value
@@ -58,28 +60,34 @@ export default function NewDoctorPage(props) {
 
             {/* Gender */}
 
-            <div>
+            <div className="m-3">
                 <span>Gender: </span>
-                <label htmlFor="male">Male: </label>
-                <input type="radio" id="male" name="gender" value="male" onChange={(e) => setNewDoctor((prev) => ({
-                    ...prev, gender: "male"
-                }))}/>
-                <label htmlFor="female">Female: </label>
-                <input type="radio" id="female" name="gender" value="female" onChange={(e) => setNewDoctor((prev) => ({
-                    ...prev, gender: "female"
-                }))}/>
-                <label htmlFor="others">Others: </label>
-                <input type="radio" id="others" name="gender" value="others" onChange={(e) => setNewDoctor((prev) => ({
-                    ...prev, gender: "others"
-                }))}/>
+                <label className="" htmlFor="male">Male{" "}</label>
+                <input className="m-2" type="radio" id="male" name="gender" value="male"
+                       onChange={(e) => setNewDoctor((prev) => ({
+                           ...prev, gender: "male"
+                       }))}/>
+
+                <label className="" htmlFor="female">Female{" "}</label>
+                <input className="m-2" type="radio" id="female" name="gender" value="female"
+                       onChange={(e) => setNewDoctor((prev) => ({
+                           ...prev, gender: "female"
+                       }))}/>
+                <label className="" htmlFor="others">Others{" "}</label>
+                <input className="m-2" type="radio" id="others" name="gender" value="others"
+                       onChange={(e) => setNewDoctor((prev) => ({
+                           ...prev, gender: "others"
+                       }))}/>
             </div>
+
 
             {/* Salary */}
 
 
-            <div>
-                <label htmlFor="salary">Salary: </label>
-                <input type="number" required={true} id="" name="" placeholder="Enter the salary"
+            <div className="m-3">
+                {/*<label className="form-label" htmlFor="salary">Salary: </label>*/}
+                <input className="form-control" type="number" required={true} id="" name=""
+                       placeholder="Enter the salary"
                        value={newDoctor.salary}
                        onChange={(e) => setNewDoctor((prev) => ({
                            ...prev, salary: e.target.value
@@ -88,14 +96,15 @@ export default function NewDoctorPage(props) {
 
             {/* Specialization */}
 
-            <div>
-                <label htmlFor="specialization">Specialization: </label>
-                <input type="text" id="specialization" name="specialization" placeholder="Enter a specialization"
+            <div className="m-3">
+                {/*<label className="form-label" htmlFor="specialization">Specialization: </label>*/}
+                <input className="form-control" type="text" id="specialization" name="specialization"
+                       placeholder="Enter a specialization"
                        value={newDoctor.specialization} onChange={(e) => setNewDoctor((prev) => ({
                     ...prev, specialization: e.target.value
                 }))}/>
             </div>
-            <button type="submit">Add this doctor to the list</button>
+            <button className="btn btn-primary" type="submit">Add this doctor to the list</button>
         </form>
     )
 }

@@ -74,3 +74,8 @@ h6 {
 #__next {
     isolation: isolate;
 }
+
+input:not([type="radio"]) {
+    max-width: 50%;
+
+}

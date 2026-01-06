@@ -34,7 +34,7 @@ export function FetchPatientsPage(props) {
 
     return (<div className="container-fluid">
             <h1 className="m-1 p-1 text-center">List of admitted patients</h1>
-            {<main className="row row-cols-1 row-cols-2 g-4">
+            {<main className="row row-cols-1 row-cols-2 g-4 p-4">
                 {patients.map(patient => (
                     <PatientCard key={patient.id} patient={patient}/>
                 ))}

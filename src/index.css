@@ -1,0 +1,145 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+    margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        interpolate-size: allow-keywords;
+    }
+}
+
+body {
+    /* 4. Add accessible line-height */
+    -webkit-font-smoothing: antialiased;
+    /* 5. Improve text rendering */
+    line-height: 1.5;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+    text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+    isolation: isolate;
+}
+
+
+body {
+    font-family: monospace;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container > h1 {
+    text-align: center;
+}
+
+.navbar {
+    background-color: crimson;
+    color: whitesmoke;
+    display: flex;
+    gap: 1rem;
+
+    & > * {
+        background: cornflowerblue;
+        border-radius: 2px;
+        color: inherit;
+        font-weight: bold;
+        padding: 10px;
+        text-decoration: none;
+    }
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+main > div {
+    align-items: baseline;
+    border: 1px solid cornflowerblue;
+    border-radius: 20px;
+    display: inherit;
+    flex-direction: column;
+    font-size: 1.5em;
+    gap: 1rem;
+    justify-content: center;
+    margin: 1rem;
+    padding: 20px;
+
+    width: max-content;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    & > div {
+        display: flex;
+        gap: 1rem;
+        margin: 1rem;
+    }
+}
+
+button {
+    width: fit-content;
+}

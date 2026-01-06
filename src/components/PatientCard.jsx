@@ -4,15 +4,19 @@ export default function PatientCard(props) {
 
     const {name: docName, specialization} = doctor;
     return (
-        <div>
-            <h2>Name: {name}</h2>
-            <p>Email: {email}</p>
-            <p>Id: {id}</p>
-            <p>Age: {age} years old</p>
-            <p>Gender: {gender}</p>
-            <p>weight: {weight}</p>
-            <p>Disease: {disease}</p>
-            <p>Treated by: Dr. {docName}, <strong>{specialization}{" "}specialist</strong></p>
+        <div className="col p-2">
+            <div className="card h-100">
+                <div className="card-body">
+                    <h2 className="card-title">Name: {name}</h2>
+                    <p className="card-subtitle">Email: {email}</p>
+                    <p className="card-text">Age: {age} years old</p>
+                    <p className="card-text">Gender: {gender}</p>
+                    <p className="card-text">weight: {weight}</p>
+                    <p className="card-text">Disease: {disease}</p>
+                    <p className="card-text">Treated by: Dr. {docName}, <strong>{specialization}{" "}specialist</strong>
+                    </p>
+                </div>
+            </div>
         </div>
     )
 }

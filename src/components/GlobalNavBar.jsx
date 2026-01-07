@@ -2,7 +2,7 @@ import {Link} from "react-router-dom";
 
 export default function GlobalNavBar() {
     return (
-        <nav className="navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar-expand-lg navbar-light bg-light my-3">
             <div className="container-fluid">
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"

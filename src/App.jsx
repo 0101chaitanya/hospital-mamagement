@@ -15,7 +15,6 @@ export default function App() {
             <Routes>
                 <Route path="/" element={<FetchDoctorsPage baseUrl={baseUrl}/>}/>
                 <Route path="/add-new-doctor" element={<NewDoctorPage baseUrl={baseUrl}/>}/>
-
                 <Route path="/patients" element={<FetchPatientsPage baseUrl={baseUrl}/>}/>
 
 

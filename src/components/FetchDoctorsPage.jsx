@@ -44,9 +44,11 @@ export default function FetchDoctorsPage(props) {
     if (error) return <p>Error: {error}</p>;
 
     return (
-        <div className="container-fluid">
+        <div className="container-flui">
             <h1 className="m-1 p-1 text-center">List of doctors working in the Chaitanya Hospital</h1>
-            {<main className="row row-cols-1 row-cols-2 g-4 p-4">
+
+            {/*-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4*/}
+            {<main className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-1 p-2">
                 {doctors.map(doctor => (
                     <DoctorCard handleDeleteDoctor={deleteDoctor} key={doctor.id} doctor={doctor}/>
                 ))}

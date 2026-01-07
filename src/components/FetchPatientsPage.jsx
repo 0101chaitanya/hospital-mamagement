@@ -9,8 +9,6 @@ export function FetchPatientsPage(props) {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     useEffect(() => {
-
-
         fetchPatients();
     }, []);
 
@@ -34,7 +32,7 @@ export function FetchPatientsPage(props) {
 
     return (<div className="container-fluid">
             <h1 className="m-1 p-1 text-center">List of admitted patients</h1>
-            {<main className="row row-cols-1 row-cols-2 g-4 p-4">
+            {<main className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-1 p-2">
                 {patients.map(patient => (
                     <PatientCard key={patient.id} patient={patient}/>
                 ))}

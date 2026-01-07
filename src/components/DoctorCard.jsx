@@ -12,7 +12,8 @@ export default function DoctorCard(props) {
                     <p className="card-text">Gender: {gender}</p>
                     <p className="card-text">Specialization: {specialization}</p>
                     <p className="card-text">Salary: {salary}</p>
-                    <button className="btn btn-danger m-2" onClick={() => handleDeleteDoctor(id)}>Fire this doctor 😤
+                    <button className="btn btn-danger m-2 rounded-pill" onClick={() => handleDeleteDoctor(id)}>Fire this
+                                                                                                               doctor 😤
                     </button>
                 </div>
             </div>

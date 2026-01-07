@@ -104,7 +104,7 @@ export default function NewDoctorPage(props) {
                     ...prev, specialization: e.target.value
                 }))}/>
             </div>
-            <button className="btn btn-primary" type="submit">Add this doctor to the list</button>
+            <button className="btn btn-primary rounded-pill" type="submit">Add this doctor to the list</button>
         </form>
     )
 }

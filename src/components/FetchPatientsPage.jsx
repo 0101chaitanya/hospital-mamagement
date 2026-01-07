@@ -10,6 +10,7 @@ export function FetchPatientsPage(props) {
     const [error, setError] = useState(null);
     useEffect(() => {
         fetchPatients();
+
     }, []);
 
     async function fetchPatients() {

@@ -8,11 +8,15 @@ export default function FetchDoctorsPage(props) {
     // const naigate = useNavigate();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    // const [time, setTime] = useState(0)
+
     useEffect(() => {
-
-
         fetchDoctors();
-
+        const interval = setInterval(() => {
+            // setTime(prevState => prevState + 1)
+            fetchDoctors()
+        }, 30000)
+        return () => clearInterval(interval)
 
     }, []); // empty array => run once on mount
     async function fetchDoctors() {
@@ -21,7 +25,6 @@ export default function FetchDoctorsPage(props) {
             setLoading(true);
             const res = await axios.get(`${baseUrl}/doctors`);
             if (res.status === 200) {
-                console.log(res.data);
                 setDoctors(res.data);
             }
         } catch (err) {
@@ -45,6 +48,7 @@ export default function FetchDoctorsPage(props) {
 
     return (
         <div className="container-flui">
+            {/*<p>Time: ${time}</p>*/}
             <h1 className="m-1 p-1 text-center">List of doctors working in the Chaitanya Hospital</h1>
 
             {/*-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4*/}
